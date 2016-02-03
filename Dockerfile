@@ -1,12 +1,23 @@
 from alpine
 maintainer Jesse Miller (jessea@jessebmiller.com)
 
-run apk add --update python3 \
-    && pip3 install bottle \
-    && rm -rf /var/cache/apk/*
+run apk update && \
+    apk add --update \
+      build-base \
+      python \
+      python-dev \
+      py-pip
+
+run pip install --upgrade pip \
+                          bottle
+    
+run rm -rf /var/cache/apk/*  \
+    && apk del \
+       build-base \
+       python-dev \
 
 run mkdir /app
 add app /app
 
-cmd python3 -u app
+cmd python -u app
 
