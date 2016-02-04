@@ -11,13 +11,9 @@ run apk update && \
 run pip install --upgrade pip \
                           bottle
     
-run rm -rf /var/cache/apk/*  \
-    && apk del \
-       build-base \
-       python-dev \
+run rm -rf /var/cache/apk/*
 
 run mkdir /app
 add app /app
 
 cmd python -u app
-
