@@ -4,9 +4,13 @@ from bottle import (
     template,
 )
 
+from components import (
+    render,
+)
+
 @route('/')
 def index():
-    return template("<h1>init</h1>")
+    return render(index)
 
 run(host="0.0.0.0", port="8000", debug=True)
-
+ 

@@ -1,19 +1,10 @@
-from alpine
+from frolvlad/alpine-python3
 maintainer Jesse Miller (jessea@jessebmiller.com)
 
-run apk update && \
-    apk add --update \
-      build-base \
-      python \
-      python-dev \
-      py-pip
-
-run pip install --upgrade pip \
-                          bottle
+run pip install bottle \
+                pyrsistent
     
-run rm -rf /var/cache/apk/*
-
 run mkdir /app
 add app /app
 
-cmd python -u app
+cmd python3 -u app
