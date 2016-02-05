@@ -4,7 +4,7 @@ machine:
   environment:
     app_name: lifedash
     docker_user: jesse
-    hub_email: jesse@jessebmiller.com
+    docker_email: jesse@jessebmiller.com
     unittest_cmd: python -m unittest discover
 
     docker_tag: $docker_user/$app_name:$(cat Version)_$(echo $CIRCLE_SHA1 | cut -c1-7)
