@@ -20,7 +20,7 @@ dependencies:
 
 test:
   override:
-  - docker run :docker_tag :unittest_cmd
+  - docker run $docker_tag $unittest_cmd
 
 deployment:
   index:
